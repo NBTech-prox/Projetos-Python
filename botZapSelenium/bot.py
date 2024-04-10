@@ -6,7 +6,6 @@ from selenium.webdriver.common.by import By
 import urllib
 from time import sleep
 import datetime
-import os
 
 cookie_name = 'WP'
 CHROME_PROFILE_PATH = f'user-data-dir=/home/nb/.config/google-chrome/Default/{cookie_name}'
