@@ -1,5 +1,6 @@
 import openpyxl
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import urllib
@@ -7,8 +8,17 @@ from time import sleep
 import datetime
 import os
 
-navegador = webdriver.Chrome()
+cookie_name = 'WP'
+CHROME_PROFILE_PATH = f'user-data-dir=/home/nb/.config/google-chrome/Default/{cookie_name}'
+
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument(CHROME_PROFILE_PATH)
+chrome_options.binary_location = r'chromedriver'
+
+navegador = webdriver.Chrome(options=chrome_options)
 navegador.get('https://web.whatsapp.com')
+
+sleep(30)
 
 workbook = openpyxl.load_workbook('clientes.xlsx')
 pagina_cliente = workbook['folha']

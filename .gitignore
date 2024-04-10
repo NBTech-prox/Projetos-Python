@@ -190,4 +190,6 @@ pyrightconfig.json
 .history
 .ionide
 
+zip
+
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python
